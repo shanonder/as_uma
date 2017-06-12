@@ -64,6 +64,7 @@ package
 			Context.instance.setup(new SceneModule());
 //			Context.instance.setup(new ChatModule());
 			Context.instance.start();
+			
 		}
 	}
 }

@@ -1,6 +1,6 @@
 package games.models
 {
-	import com.icday.database.net.datas.RoleData;
+	import com.icday.database.net.data.RoleData;
 	import com.icday.mvcs.ModelBase;
 	import com.icday.registers.CsvUtil;
 	import com.icday.utils.Singleton;

@@ -11,7 +11,6 @@ package games.logins.proxys
 	
 	import games.globals.ContextEvent;
 	import games.globals.Global;
-	import games.globals.HeapProxy;
 	
 	import lib.Lib;
 	
@@ -47,7 +46,7 @@ package games.logins.proxys
 				if(login.roles == null || login.roles.length == 0){
 					Context.instance.dispatch(ContextEvent.CREATE_ROLE);
 				}
-				Lib.net.connectHandler = new Handler(onGameConnect);
+//				Lib.net.connectHandler = new Handler(onGameConnect);
 			}
 		}		
 		
@@ -60,19 +59,18 @@ package games.logins.proxys
 //				Global.passKey = login.passKey;
 //			}
 //		}
-		
-		private function onGameConnect(host:String,port:int):void
-		{
-			Lib.net.connectHandler = null;
-			HeapProxy.instance.start();
-			if(Global.passKey){
-				Lib.net.sendRequest(new LoginRequest(Global.passKey,Global.token,Global.platform));
-			}
-		}
+//		private function onGameConnect(host:String,port:int):void
+//		{
+//			Lib.net.connectHandler = null;
+//			HeapProxy.instance.start();
+//			if(Global.passKey){
+//				Lib.net.sendRequest(new LoginRequest(Global.passKey,Global.token,Global.platform));
+//			}
+//		}
 		
 		private function onLoginConnect(host:String,port:int):void
 		{
-			Lib.net.sendRequest(new LoginGateRequest(username,password));
+			Lib.net.sendRequest(new LoginRequest(Global.userId,Global.token,Global.platform));
 		}
 		 
 		public function login(user:String,pwd:String):void{

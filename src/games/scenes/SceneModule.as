@@ -21,8 +21,7 @@ package games.scenes
 		override public function startup():void
 		{
 			ResLoader.registParser(SceneParser.TYPE,SceneParser.Parser);
-			addCommand(ProtocolConst.EnterWorld,EnterWorldCommand);
-			addCommand(ProtocolConst.EnterScene,EnterSceneCommand);
+			addCommand(ProtocolConst.EnterWorldResponse,EnterWorldCommand);
 			Context.instance.addEventListener(ContextEvent.ENTER_WORLD,onEnterWorld);
 			
 			SceneModel.instance.addEventListener(SceneModelEvent.ENTER_SCENE,onEnterScene);

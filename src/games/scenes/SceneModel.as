@@ -1,8 +1,7 @@
 package games.scenes
 {
 	import com.icday.database.csvs.DtScene;
-	import com.icday.database.net.responses.EnterSceneResponse;
-	import com.icday.database.net.responses.EnterWorldResponse;
+	import com.icday.database.net.response.EnterWorldResponse;
 	import com.icday.mvcs.ModelBase;
 	import com.icday.registers.CsvUtil;
 	import com.icday.utils.Singleton;
@@ -43,10 +42,10 @@ package games.scenes
 			
 		}
 		
-		public function gotoMap(resp:EnterSceneResponse):void
-		{
-			
-		}
+//		public function gotoMap(resp:EnterSceneResponse):void
+//		{
+//			
+//		}
 		
 		public function getCfgById(sceneId:int):DtScene
 		{
