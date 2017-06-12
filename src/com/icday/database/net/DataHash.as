@@ -14,6 +14,7 @@ package com.icday.database.net {
 		public static const Classname2Type:Dictionary = new Dictionary();
 		public static const ClassName2Write:Dictionary = new Dictionary();
 		public static const Type2Read:Dictionary = new Dictionary();
+
 		Classname2Type["com.icday.database.net.data::AttributesData"] = 1;
 		Classname2Type["com.icday.database.net.data::ItemData"] = 2;
 		Classname2Type["com.icday.database.net.data::EquipData"] = 3;
