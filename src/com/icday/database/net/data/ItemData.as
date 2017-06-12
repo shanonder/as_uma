@@ -28,19 +28,19 @@ package com.icday.database.net.data {
 			super();
 		}
 
-		public static function read(bytes :ByteArray , item : ItemData):ItemData{
-			item.insId = bytes.readUTF();
-			item.cfgId = bytes.readInt();
-			item.type = bytes.readUTF();
-			item.createTime = bytes.readDouble();
-			return item;
+		public static function read(bytes :ByteArray , data : ItemData):ItemData{
+			data.insId = bytes.readUTF();
+			data.cfgId = bytes.readInt();
+			data.type = bytes.readUTF();
+			data.createTime = bytes.readDouble();
+			return data;
 		}
 
-		public static function write(bytes :ByteArray , item : ItemData):ByteArray{
-			bytes.writeUTF(item.insId == null ?"" : item.insId);
-			bytes.writeInt(item.cfgId);
-			bytes.writeUTF(item.type == null ?"" : item.type);
-			bytes.writeDouble(item.createTime);
+		public static function write(bytes :ByteArray , data : ItemData):ByteArray{
+			bytes.writeUTF(data.insId == null ?"" : data.insId);
+			bytes.writeInt(data.cfgId);
+			bytes.writeUTF(data.type == null ?"" : data.type);
+			bytes.writeDouble(data.createTime);
 			return bytes;
 		}
 

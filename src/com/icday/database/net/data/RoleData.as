@@ -5,6 +5,7 @@ package com.icday.database.net.data {
 	 * md5:f67d8abd5c0270cf2983938580c6b3f7
 	 */
 	import flash.utils.ByteArray;
+	import com.icday.util.ArrayUtil;
 	public class RoleData{
 		/**
 		 * 唯一ID
@@ -35,23 +36,23 @@ package com.icday.database.net.data {
 			super();
 		}
 
-		public static function read(bytes :ByteArray , item : RoleData):RoleData{
-			item.insId = bytes.readUTF();
-			item.cfgId = bytes.readInt();
-			item.name = bytes.readUTF();
-			item.level = bytes.readInt();
-			item.exp = bytes.readDouble();
-			item.attributes = bytes.readObject();
-			return item;
+		public static function read(bytes :ByteArray , data : RoleData):RoleData{
+			data.insId = bytes.readUTF();
+			data.cfgId = bytes.readInt();
+			data.name = bytes.readUTF();
+			data.level = bytes.readInt();
+			data.exp = bytes.readDouble();
+			data.attributes = ArrayUtil.read(bytes);
+			return data;
 		}
 
-		public static function write(bytes :ByteArray , item : RoleData):ByteArray{
-			bytes.writeUTF(item.insId == null ?"" : item.insId);
-			bytes.writeInt(item.cfgId);
-			bytes.writeUTF(item.name == null ?"" : item.name);
-			bytes.writeInt(item.level);
-			bytes.writeDouble(item.exp);
-			bytes.writeObject(item.attributes);
+		public static function write(bytes :ByteArray , data : RoleData):ByteArray{
+			bytes.writeUTF(data.insId == null ?"" : data.insId);
+			bytes.writeInt(data.cfgId);
+			bytes.writeUTF(data.name == null ?"" : data.name);
+			bytes.writeInt(data.level);
+			bytes.writeDouble(data.exp);
+			ArrayUtil.write(bytes ,data.attributes);
 			return bytes;
 		}
 

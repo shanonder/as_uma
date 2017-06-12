@@ -5,6 +5,7 @@ package com.icday.database.net.data {
 	 * md5:f67d8abd5c0270cf2983938580c6b3f7
 	 */
 	import flash.utils.ByteArray;
+	import com.icday.util.ArrayUtil;
 	public class PackData{
 		/**
 		 * 唯一ID
@@ -20,17 +21,17 @@ package com.icday.database.net.data {
 			super();
 		}
 
-		public static function read(bytes :ByteArray , item : PackData):PackData{
-			item.type = bytes.readShort();
-			item.openLength = bytes.readShort();
-			item.itemList = bytes.readObject();
-			return item;
+		public static function read(bytes :ByteArray , data : PackData):PackData{
+			data.type = bytes.readShort();
+			data.openLength = bytes.readShort();
+			data.itemList = ArrayUtil.read(bytes);
+			return data;
 		}
 
-		public static function write(bytes :ByteArray , item : PackData):ByteArray{
-			bytes.writeShort(item.type);
-			bytes.writeShort(item.openLength);
-			bytes.writeObject(item.itemList);
+		public static function write(bytes :ByteArray , data : PackData):ByteArray{
+			bytes.writeShort(data.type);
+			bytes.writeShort(data.openLength);
+			ArrayUtil.write(bytes ,data.itemList);
 			return bytes;
 		}
 

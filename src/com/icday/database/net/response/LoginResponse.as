@@ -4,6 +4,7 @@ package com.icday.database.net.response {
 	 * 此类由CodeGenerateUtil自动生成
 	 */
 	import flash.utils.ByteArray;
+	import com.icday.util.ArrayUtil;
 	public class LoginResponse{
 		/**
 		 * 玩家ID
@@ -34,7 +35,7 @@ package com.icday.database.net.response {
 			token = bytes.readUTF();
 			server = bytes.readUTF();
 			port = bytes.readInt();
-			roles = bytes.readObject();
+			roles = ArrayUtil.read(bytes);
 			lastRoleId = bytes.readUTF();
 		}
 
