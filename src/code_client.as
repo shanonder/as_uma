@@ -1,6 +1,8 @@
 package
 {
+	import com.icday.configs.PlatConfig;
 	import com.icday.database.net.DataRegister;
+	import com.icday.model.PlatModel;
 	import com.icday.mvcs.Context;
 	import com.icday.net.socket.SocketAdapter;
 	import com.icday.registers.CsvUtil;
@@ -9,7 +11,6 @@ package
 	import flash.display.Sprite;
 	import flash.events.Event;
 	
-	import games.chats.ChatModule;
 	import games.createRole.CreateRoleModule;
 	import games.globals.Global;
 	import games.logins.LoginModule;
@@ -51,10 +52,11 @@ package
 			DataRegister.regist();
 			View.registerComponent("RichTextField",RichTextField);
 			App.init(this);
+			PlatModel.instance.initUrl();
 			Config.resPath = "http://localhost:9001/";
 			CsvUtil.regist();
 			Lib.net = SocketAdapter.build();
-
+			
 			//			预加载配置文件
 			var arr:Array = ["assets/skins/public.swf"].concat(CsvUtil.URLS)
 			App.loader.loadAssets(arr,new Handler(onCompleteHandler));

@@ -4,7 +4,9 @@ package com.icday.database.net.response {
 	 * 此类由CodeGenerateUtil自动生成
 	 */
 	import flash.utils.ByteArray;
+	import com.icday.util.SocketDataUtil;
 	import com.icday.database.net.data.RoleData;
+	import com.icday.util.ArrayUtil;
 	public class EnterWorldResponse{
 		/**
 		 * 角色
@@ -23,9 +25,9 @@ package com.icday.database.net.response {
 		 */
 		public var customize:String;
 		public function EnterWorldResponse(bytes:ByteArray){
-			role = bytes.readObject();
-			packs = bytes.readObject();
-			modules = bytes.readObject();
+			role = SocketDataUtil.read(bytes);
+			packs = ArrayUtil.read(bytes);
+			modules = ArrayUtil.read(bytes);
 			customize = bytes.readUTF();
 		}
 

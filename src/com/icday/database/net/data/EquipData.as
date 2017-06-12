@@ -6,6 +6,7 @@ package com.icday.database.net.data {
 	 * md5:f67d8abd5c0270cf2983938580c6b3f7
 	 */
 	import flash.utils.ByteArray;
+	import com.icday.util.ArrayUtil;
 	public class EquipData extends ItemData{
 		/**
 		 * 唯一ID
@@ -20,17 +21,17 @@ package com.icday.database.net.data {
 			super();
 		}
 
-		public static function read(bytes :ByteArray , item : EquipData):EquipData{
-			ItemData.read(bytes , item);
-			item.strenthLv = bytes.readInt();
-			item.attributes = bytes.readObject();
-			return item;
+		public static function read(bytes :ByteArray , data : EquipData):EquipData{
+			ItemData.read(bytes , data);
+			data.strenthLv = bytes.readInt();
+			data.attributes = ArrayUtil.read(bytes);
+			return data;
 		}
 
-		public static function write(bytes :ByteArray , item : EquipData):ByteArray{
-			ItemData.write(bytes , item);
-			bytes.writeInt(item.strenthLv);
-			bytes.writeObject(item.attributes);
+		public static function write(bytes :ByteArray , data : EquipData):ByteArray{
+			ItemData.write(bytes , data);
+			bytes.writeInt(data.strenthLv);
+			ArrayUtil.write(bytes ,data.attributes);
 			return bytes;
 		}
 

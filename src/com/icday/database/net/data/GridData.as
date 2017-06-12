@@ -6,6 +6,7 @@ package com.icday.database.net.data {
 	 */
 	import flash.utils.ByteArray;
 	import com.icday.database.net.data.ItemData;
+	import com.icday.util.SocketDataUtil;
 	public class GridData{
 		/**
 		 * 序号
@@ -20,15 +21,15 @@ package com.icday.database.net.data {
 			super();
 		}
 
-		public static function read(bytes :ByteArray , item : GridData):GridData{
-			item.index = bytes.readShort();
-			item.item = bytes.readObject();
-			return item;
+		public static function read(bytes :ByteArray , data : GridData):GridData{
+			data.index = bytes.readShort();
+			data.item = SocketDataUtil.read(bytes);
+			return data;
 		}
 
-		public static function write(bytes :ByteArray , item : GridData):ByteArray{
-			bytes.writeShort(item.index);
-			bytes.writeObject(item.item);
+		public static function write(bytes :ByteArray , data : GridData):ByteArray{
+			bytes.writeShort(data.index);
+			SocketDataUtil.write(bytes , data.item);
 			return bytes;
 		}
 

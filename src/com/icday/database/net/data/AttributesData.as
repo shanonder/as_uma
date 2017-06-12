@@ -17,15 +17,15 @@ package com.icday.database.net.data {
 			super();
 		}
 
-		public static function read(bytes :ByteArray , item : AttributesData):AttributesData{
-			item.cfgId = bytes.readInt();
-			item.value = bytes.readDouble();
-			return item;
+		public static function read(bytes :ByteArray , data : AttributesData):AttributesData{
+			data.cfgId = bytes.readInt();
+			data.value = bytes.readDouble();
+			return data;
 		}
 
-		public static function write(bytes :ByteArray , item : AttributesData):ByteArray{
-			bytes.writeInt(item.cfgId);
-			bytes.writeDouble(item.value);
+		public static function write(bytes :ByteArray , data : AttributesData):ByteArray{
+			bytes.writeInt(data.cfgId);
+			bytes.writeDouble(data.value);
 			return bytes;
 		}
 
