@@ -1,0 +1,41 @@
+id: 2-1.0.r1/0
+type: dir
+count: 0
+cpath: /app_server/protocol_generate
+copyroot: 0 /
+
+PLAIN
+K 17
+protocol_generate
+V 14
+dir 2-1.0.r1/0
+END
+ENDREP
+id: 0-1.0.r1/146
+type: dir
+count: 0
+text: 1 86 47 47 281d62bf64365aa63f839761e9fd14af
+cpath: /app_server
+copyroot: 0 /
+
+PLAIN
+K 10
+app_server
+V 16
+dir 0-1.0.r1/146
+END
+ENDREP
+id: 0.0.r1/321
+type: dir
+pred: 0.0.r0/17
+count: 1
+text: 1 266 42 42 32824f9fc14c2f53153e47e1531d061e
+cpath: /
+copyroot: 0 /
+
+_0.0.t0-0 add-dir false false /app_server
+
+_2.0.t0-0 add-dir false false /app_server/protocol_generate
+
+
+321 446

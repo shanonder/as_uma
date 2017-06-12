@@ -1,0 +1,25 @@
+id: 0-1.0.r1/0
+type: dir
+count: 0
+cpath: /code_client
+copyroot: 0 /
+
+PLAIN
+K 11
+code_client
+V 14
+dir 0-1.0.r1/0
+END
+ENDREP
+id: 0.0.r1/123
+type: dir
+pred: 0.0.r0/17
+count: 1
+text: 1 69 41 41 67f700fd2a308e8a0a1c3bd612e7bf13
+cpath: /
+copyroot: 0 /
+
+_0.0.t0-0 add-dir false false /code_client
+
+
+123 247

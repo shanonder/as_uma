@@ -1,0 +1,51 @@
+id: 6w-4.0-6.r6/0
+type: file
+pred: 6w-4.0.r4/133775
+count: 1
+text: 4 94369 224 207 1cfdd3c248a5e6ed1a539f39de1b6c0e 86feb96aecfa1cd4302f9bff26e76890d7dd3d3f 3-3/_6y
+props: 2 8006 39 39 f2ea0bdf4310dae3aef66de358bcb0e1
+cpath: /branches/release
+copyfrom: 4 /EngineLib/src/net/interfaces/ISocketMessage.as
+
+PLAIN
+K 7
+release
+V 18
+file 6w-4.0-6.r6/0
+END
+ENDREP
+id: 0-5.0.r6/357
+type: dir
+pred: 0-5.0.r5/0
+count: 1
+text: 6 304 40 40 2f661432971051f63945ba84d192ec4d
+cpath: /branches
+copyroot: 0 /
+
+PLAIN
+K 9
+EngineLib
+V 19
+dir 0-3.0.r4/138493
+K 8
+branches
+V 16
+dir 0-5.0.r6/357
+K 11
+code_client
+V 18
+dir 0-1.0.r2/17009
+END
+ENDREP
+id: 0.0.r6/625
+type: dir
+pred: 0.0.r5/196
+count: 6
+text: 6 493 119 119 64b3e8e4ad31122928e805fbfec1db03
+cpath: /
+copyroot: 0 /
+
+6w-4._0.t5-5 add-file false false /branches/release
+4 /EngineLib/src/net/interfaces/ISocketMessage.as
+
+625 753
