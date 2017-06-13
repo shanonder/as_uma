@@ -6,18 +6,12 @@
 
 package tests
 {
-	import morn.core.plugins.ClipTextCell;
-	import morn.core.components.RichTextField;
-	import morn.core.plugins.RichTextFieldBuilder;
-	import morn.core.plugins.ShortcutPlugin;
-	
 	import flash.display.Shape;
 	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.events.KeyboardEvent;
 	import flash.events.MouseEvent;
 	import flash.events.TimerEvent;
-	import flash.text.TextField;
 	import flash.text.TextFormat;
 	import flash.ui.Keyboard;
 	import flash.utils.Timer;
@@ -26,8 +20,12 @@ package tests
 	
 	import morn.core.components.Button;
 	import morn.core.components.Clip;
+	import morn.core.components.RichTextField;
 	import morn.core.components.ScrollBar;
 	import morn.core.handlers.Handler;
+	import morn.core.plugins.ClipTextCell;
+	import morn.core.plugins.RichTextFieldBuilder;
+	import morn.core.plugins.ShortcutPlugin;
 	
 	
 	[SWF(width = "500", height = "500", frameRate = "24", backgroundColor = "0x333333")]

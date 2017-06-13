@@ -63,37 +63,34 @@ package com.icday.util
 			var i:int;
 			while((index = bytes.readShort()) != -1)
 			{
-				while(( i = item.size()) < index){
-					item.add(i, null);
-				}
+//				while(( i = item.length) < index){
+//					item.add(i, null);
+//				}
 				var type:int = bytes.readShort();
 				if(type > 0){
-					item.add(index, DataHash.Type2Read[type](bytes));
+					item[index] = DataHash.Type2Read[type](bytes);
 				}
 				else if(type == DefaultTypeConst.type_byte){
-					item.add(index,bytes.readByte());
+					item[index] = bytes.readByte();
 				}
 				else if(type == DefaultTypeConst.type_boolean){
-					item.add(index,bytes.readBoolean());
+					item[index] = bytes.readBoolean();
 				}
 				else if(type == DefaultTypeConst.type_short){
-					item.add(index,bytes.readShort());
+					item[index] = index,bytes.readShort();
 				}
 				else if(type == DefaultTypeConst.type_int){
-					item.add(index, bytes.readInt());
+					item[index] = bytes.readInt();
 				}
 				else if(type == DefaultTypeConst.type_bigint){
-					item.add(index,LongUtil.read(bytes));
+					item[index] = LongUtil.read(bytes);
 				}
 				else if(type == DefaultTypeConst.type_string){
-					item.add(index, bytes.readUTF());
+					item[index] = bytes.readUTF();
 				}
 				else if(type == DefaultTypeConst.type_arraylist){
-					item.add(index,read(bytes));
+					item[index] = index,read(bytes);
 				}
-			}
-			while(( i = item.size()) < length){
-				item.add(i, null);
 			}
 			return item;
 		}

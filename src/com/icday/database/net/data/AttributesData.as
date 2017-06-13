@@ -17,7 +17,8 @@ package com.icday.database.net.data {
 			super();
 		}
 
-		public static function read(bytes :ByteArray , data : AttributesData):AttributesData{
+		public static function read(bytes :ByteArray , data : AttributesData = null):AttributesData{
+			data ||= new AttributesData();
 			data.cfgId = bytes.readInt();
 			data.value = bytes.readDouble();
 			return data;

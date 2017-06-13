@@ -21,7 +21,8 @@ package com.icday.database.net.data {
 			super();
 		}
 
-		public static function read(bytes :ByteArray , data : GridData):GridData{
+		public static function read(bytes :ByteArray , data : GridData = null):GridData{
+			data ||= new GridData();
 			data.index = bytes.readShort();
 			data.item = SocketDataUtil.read(bytes);
 			return data;

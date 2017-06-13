@@ -21,7 +21,8 @@ package com.icday.database.net.data {
 			super();
 		}
 
-		public static function read(bytes :ByteArray , data : EquipData):EquipData{
+		public static function read(bytes :ByteArray , data : EquipData = null):EquipData{
+			data ||= new EquipData();
 			ItemData.read(bytes , data);
 			data.strenthLv = bytes.readInt();
 			data.attributes = ArrayUtil.read(bytes);

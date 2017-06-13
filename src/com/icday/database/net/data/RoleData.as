@@ -36,7 +36,8 @@ package com.icday.database.net.data {
 			super();
 		}
 
-		public static function read(bytes :ByteArray , data : RoleData):RoleData{
+		public static function read(bytes :ByteArray , data : RoleData = null):RoleData{
+			data ||= new RoleData();
 			data.insId = bytes.readUTF();
 			data.cfgId = bytes.readInt();
 			data.name = bytes.readUTF();

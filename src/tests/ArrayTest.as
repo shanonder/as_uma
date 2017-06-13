@@ -1,21 +1,35 @@
 package tests
 {
-	import com.icday.database.net.data.ItemData;
+	import com.greensock.events.LoaderEvent;
+	import com.icday.database.net.data.EquipData;
+	import com.icday.util.ArrayUtil;
+	import com.icday.util.SocketDataUtil;
 	
 	import flash.display.Sprite;
-	import flash.utils.getQualifiedClassName;
+	import flash.events.Event;
+	import flash.net.URLLoader;
+	import flash.net.URLLoaderDataFormat;
+	import flash.net.URLRequest;
+	import flash.utils.ByteArray;
 	
 	public class ArrayTest extends Sprite
 	{
 		public function ArrayTest()
 		{
 			super();
-			var type:Boolean = false;
-			var num:Number = 1.01;
-			trace(getQualifiedClassName(new ItemData));
-			trace(getQualifiedClassName(type));
-			trace(getQualifiedClassName(num));
-			trace(getQualifiedClassName("asdas"));
+			var load:URLLoader = new URLLoader();
+			load.dataFormat = URLLoaderDataFormat.BINARY;
+			load.addEventListener(LoaderEvent.COMPLETE,onComplete);
+			load.load(new URLRequest("C:/workspaces/datas/test/datatest.dat"));
+		}
+		
+		protected function onComplete(event:Event):void
+		{
+			var bytes:ByteArray = event.currentTarget.data;
+			var arr:Array = ArrayUtil.read(bytes);
+			var obj1:EquipData = SocketDataUtil.read(bytes);
+			var obj2:EquipData = SocketDataUtil.read(bytes);
+			
 		}
 	}
 }

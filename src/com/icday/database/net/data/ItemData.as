@@ -28,7 +28,8 @@ package com.icday.database.net.data {
 			super();
 		}
 
-		public static function read(bytes :ByteArray , data : ItemData):ItemData{
+		public static function read(bytes :ByteArray , data : ItemData = null):ItemData{
+			data ||= new ItemData();
 			data.insId = bytes.readUTF();
 			data.cfgId = bytes.readInt();
 			data.type = bytes.readUTF();

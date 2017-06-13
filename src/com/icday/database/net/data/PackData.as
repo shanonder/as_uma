@@ -21,7 +21,8 @@ package com.icday.database.net.data {
 			super();
 		}
 
-		public static function read(bytes :ByteArray , data : PackData):PackData{
+		public static function read(bytes :ByteArray , data : PackData = null):PackData{
+			data ||= new PackData();
 			data.type = bytes.readShort();
 			data.openLength = bytes.readShort();
 			data.itemList = ArrayUtil.read(bytes);
