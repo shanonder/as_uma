@@ -43,10 +43,10 @@ package games.logins.proxys
 			if(status == 200){
 				dispatch(LoginSuccess);
 				var login:LoginResponse = new LoginResponse(bytes);
-				if(login.roles == null || login.roles.length == 0){
-					Context.instance.dispatch(ContextEvent.CREATE_ROLE);
-				}
 //				Lib.net.connectHandler = new Handler(onGameConnect);
+			}
+			if(status == 201){
+				Context.instance.dispatch(ContextEvent.CREATE_ROLE);
 			}
 		}		
 		

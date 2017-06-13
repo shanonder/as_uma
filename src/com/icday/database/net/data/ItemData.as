@@ -3,7 +3,7 @@ package com.icday.database.net.data {
 	/**
 	 * 此类由CodeGenerateUtil自动生成
 	 * 物品
-	 * md5:f67d8abd5c0270cf2983938580c6b3f7
+	 * md5:ac352a15447c1ae09498de3779e371de
 	 */
 	import flash.utils.ByteArray;
 	public class ItemData{
@@ -33,7 +33,7 @@ package com.icday.database.net.data {
 			data.insId = bytes.readUTF();
 			data.cfgId = bytes.readInt();
 			data.type = bytes.readUTF();
-			data.createTime = bytes.readDouble();
+			data.createTime = bytes.readLong();
 			return data;
 		}
 

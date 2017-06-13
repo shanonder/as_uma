@@ -1,6 +1,5 @@
 package
 {
-	import com.icday.configs.PlatConfig;
 	import com.icday.database.net.DataRegister;
 	import com.icday.model.PlatModel;
 	import com.icday.mvcs.Context;

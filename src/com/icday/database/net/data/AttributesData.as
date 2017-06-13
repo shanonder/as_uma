@@ -3,7 +3,7 @@ package com.icday.database.net.data {
 	/**
 	 * 此类由CodeGenerateUtil自动生成
 	 * 属性
-	 * md5:f67d8abd5c0270cf2983938580c6b3f7
+	 * md5:ac352a15447c1ae09498de3779e371de
 	 */
 	import flash.utils.ByteArray;
 	public class AttributesData{
@@ -20,7 +20,7 @@ package com.icday.database.net.data {
 		public static function read(bytes :ByteArray , data : AttributesData = null):AttributesData{
 			data ||= new AttributesData();
 			data.cfgId = bytes.readInt();
-			data.value = bytes.readDouble();
+			data.value = bytes.readLong();
 			return data;
 		}
 
