@@ -6,6 +6,7 @@ package com.icday.database.net.consts
 
 	public class DefaultTypeConst
 	{
+		public static const type_byte:int = -1;
 		public static const type_boolean:int = -2;
 		public static const type_short:int = -3;
 		public static const type_int:int = -4;
