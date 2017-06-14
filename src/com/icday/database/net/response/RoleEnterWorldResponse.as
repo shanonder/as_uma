@@ -15,7 +15,7 @@ package com.icday.database.net.response {
 		 */
 		public var role:RoleData;
 		public function RoleEnterWorldResponse(bytes:ByteArray){
-			mapId = bytes.readInt();
+			mapId = bytes.readShort();
 			posX = bytes.readDouble();
 			posY = bytes.readDouble();
 			role = SocketDataUtil.read(bytes);

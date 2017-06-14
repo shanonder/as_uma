@@ -2,7 +2,7 @@ package com.icday.database.net.data {
 
 	/**
 	 * 此类由CodeGenerateUtil自动生成
-	 * md5:f67d8abd5c0270cf2983938580c6b3f7
+	 * md5:6fbd4498441778567949fafa0192e410
 	 */
 	import flash.utils.ByteArray;
 	import com.icday.database.net.data.ItemData;
