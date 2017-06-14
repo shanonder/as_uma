@@ -4,13 +4,11 @@ package
 	import com.icday.mvcs.Context;
 	import com.icday.net.socket.SocketAdapter;
 	import com.icday.registers.CsvUtil;
-	import com.icday.utils.AsyncViewProxy;
 	
 	import flash.display.Sprite;
 	import flash.events.Event;
 	
 	import games.auth.AuthModule;
-	import games.logins.views.LoginView;
 	
 	import lib.Lib;
 	

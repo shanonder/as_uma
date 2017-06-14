@@ -1,21 +1,18 @@
 package
 {
 	import com.icday.database.net.DataRegister;
-	import com.icday.database.net.request.LoginRequest;
 	import com.icday.model.PlatModel;
 	import com.icday.mvcs.Context;
 	import com.icday.net.socket.SocketAdapter;
 	import com.icday.registers.CsvUtil;
-	import com.icday.utils.AsyncViewProxy;
 	
 	import flash.display.Sprite;
 	import flash.events.Event;
 	
-	import games.role.create.RoleCreateModule;
-	import games.globals.Global;
 	import games.auth.AuthModule;
 	import games.auth.model.AuthModel;
-	import games.logins.views.LoginView;
+	import games.globals.Global;
+	import games.role.create.RoleCreateModule;
 	import games.scenes.SceneModule;
 	
 	import lib.Lib;
