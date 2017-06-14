@@ -2,7 +2,7 @@ package com.icday.database.net.data {
 
 	/**
 	 * 此类由CodeGenerateUtil自动生成
-	 * md5:ac352a15447c1ae09498de3779e371de
+	 * md5:f67d8abd5c0270cf2983938580c6b3f7
 	 */
 	import flash.utils.ByteArray;
 	import com.icday.util.ArrayUtil;
@@ -12,13 +12,9 @@ package com.icday.database.net.data {
 		 */
 		public var insId:String;
 		/**
-		 * 职业ID
+		 * 配置表ID
 		 */
-		public var profId:int;
-		/**
-		 * 服务器ID
-		 */
-		public var serverId:int;
+		public var cfgId:int;
 		/**
 		 * 姓名
 		 */
@@ -43,19 +39,17 @@ package com.icday.database.net.data {
 		public static function read(bytes :ByteArray , data : RoleData = null):RoleData{
 			data ||= new RoleData();
 			data.insId = bytes.readUTF();
-			data.profId = bytes.readInt();
-			data.serverId = bytes.readShort();
+			data.cfgId = bytes.readInt();
 			data.name = bytes.readUTF();
 			data.level = bytes.readInt();
-			data.exp = bytes.readLong();
+			data.exp = bytes.readDouble();
 			data.attributes = ArrayUtil.read(bytes);
 			return data;
 		}
 
 		public static function write(bytes :ByteArray , data : RoleData):ByteArray{
 			bytes.writeUTF(data.insId == null ?"" : data.insId);
-			bytes.writeInt(data.profId);
-			bytes.writeShort(data.serverId);
+			bytes.writeInt(data.cfgId);
 			bytes.writeUTF(data.name == null ?"" : data.name);
 			bytes.writeInt(data.level);
 			bytes.writeDouble(data.exp);
