@@ -9,7 +9,7 @@ package
 	import flash.display.Sprite;
 	import flash.events.Event;
 	
-	import games.logins.LoginModule;
+	import games.auth.AuthModule;
 	import games.logins.views.LoginView;
 	
 	import lib.Lib;
@@ -42,7 +42,7 @@ package
 				{url:"datas/csvs/lang.dat",type:CsvParser.CSV_PROPS},
 				{url:"datas/csvs/role.dat",type:CsvParser.CSV_Data},
 			],new Handler(onCompleteHandler));
-			Context.instance.setup(new LoginModule());
+			Context.instance.setup(new AuthModule());
 			Context.instance.start();
 		}
 		
@@ -50,7 +50,7 @@ package
 		{
 			var langMap:Object = ResLoader.getResLoaded("datas/csvs/lang.dat");
 			App.lang.data = langMap;
-			AsyncViewProxy.toggleDialog(LoginView);
+//			AsyncViewProxy.toggleDialog(LoginView);
 		}
 	}
 }

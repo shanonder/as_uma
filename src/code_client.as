@@ -1,6 +1,7 @@
 package
 {
 	import com.icday.database.net.DataRegister;
+	import com.icday.database.net.request.LoginRequest;
 	import com.icday.model.PlatModel;
 	import com.icday.mvcs.Context;
 	import com.icday.net.socket.SocketAdapter;
@@ -10,9 +11,10 @@ package
 	import flash.display.Sprite;
 	import flash.events.Event;
 	
-	import games.createRole.CreateRoleModule;
+	import games.role.create.RoleCreateModule;
 	import games.globals.Global;
-	import games.logins.LoginModule;
+	import games.auth.AuthModule;
+	import games.auth.model.AuthModel;
 	import games.logins.views.LoginView;
 	import games.scenes.SceneModule;
 	
@@ -43,7 +45,7 @@ package
 		{
 			var langMap:Object = ResLoader.getResLoaded(Global.DATA_PATH + "lang.dat");
 			App.lang.data = langMap;
-			AsyncViewProxy.toggleDialog(LoginView);
+			AuthModel.instance.login();
 		}
 		
 		protected function onAddToStage(event:Event):void
@@ -59,9 +61,8 @@ package
 			//			预加载配置文件
 			var arr:Array = ["assets/skins/public.swf"].concat(CsvUtil.URLS)
 			App.loader.loadAssets(arr,new Handler(onCompleteHandler));
-			
-			Context.instance.setup(new LoginModule());
-			Context.instance.setup(new CreateRoleModule());
+			Context.instance.setup(new AuthModule());
+			Context.instance.setup(new RoleCreateModule());
 			Context.instance.setup(new SceneModule());
 //			Context.instance.setup(new ChatModule());
 			Context.instance.start();

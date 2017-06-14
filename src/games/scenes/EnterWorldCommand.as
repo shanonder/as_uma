@@ -1,14 +1,8 @@
 package games.scenes
 {
-	import com.icday.database.net.responses.EnterWorldResponse;
-	import com.icday.mvcs.Context;
 	import com.icday.mvcs.ICommand;
 	
 	import flash.utils.ByteArray;
-	
-	import games.globals.ContextEvent;
-	import games.models.PackModel;
-	import games.models.RoleModel;
 	
 	public class EnterWorldCommand implements ICommand
 	{

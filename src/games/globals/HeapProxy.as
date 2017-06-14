@@ -16,24 +16,8 @@ package games.globals
 		}
 		public function HeapProxy()
 		{
-			Lib.net.registClosure(ProtocolConst.HeapResponse,onHeap);
-		}
-		
-		private function onHeap(cmd:int,status:int,bytes:ByteArray):void
-		{
-			var hrp:HeapResponse = new HeapResponse(bytes);
-			trace(new Date(hrp.time));
 			
 		}
-		
-		public function start():void{
-			App.timer.doLoop(30000,send);
-			send();
-		}
-		
-		private function send():void
-		{
-			Lib.net.sendRequest(new HeapRequest());
-		}
+
 	}
 }

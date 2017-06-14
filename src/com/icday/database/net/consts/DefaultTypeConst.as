@@ -1,7 +1,5 @@
 package com.icday.database.net.consts
 {
-	import com.icday.util;
-	
 	import flash.utils.Dictionary;
 
 	public class DefaultTypeConst

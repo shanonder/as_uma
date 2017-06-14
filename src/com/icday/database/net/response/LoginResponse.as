@@ -6,21 +6,26 @@ package com.icday.database.net.response {
 	import flash.utils.ByteArray;
 	public class LoginResponse{
 		/**
-		 * 玩家ID
+		 * 登录平台
 		 */
-		public var uid:String;
+		public var platId:int;
+		/**
+		 * 玩家appId
+		 */
+		public var appkey:String;
 		/**
 		 * 通行证
 		 */
 		public var token:String;
 		/**
-		 * 登录平台
+		 * 玩家ID
 		 */
-		public var platform:String;
+		public var uid:String;
 		public function LoginResponse(bytes:ByteArray){
-			uid = bytes.readUTF();
+			platId = bytes.readShort();
+			appkey = bytes.readUTF();
 			token = bytes.readUTF();
-			platform = bytes.readUTF();
+			uid = bytes.readUTF();
 		}
 
 	}

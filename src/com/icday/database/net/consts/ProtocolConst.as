@@ -13,7 +13,7 @@ package com.icday.database.net.consts{
 		/** 心跳包 */
 		public static const HeapResponse : int = 0x20000;
 		/** 进入场景（初始化） */
-		public static const EnterWorldResponse : int = 0x30001;
+		public static const EnterWorldResponse : int = 0x50001;
 		/** 包裹初始化 */
 		public static const PackInitRequest : int = 0x40001;
 		/** 包裹初始化 */

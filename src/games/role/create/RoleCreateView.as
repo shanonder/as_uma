@@ -1,21 +1,18 @@
-package games.createRole
+package games.role.create
 {
 	import com.icday.database.csvs.DtRole;
-	import com.icday.database.net.request.CreateRoleRequest;
 	
 	import games.models.RoleModel;
-	
-	import lib.Lib;
 	
 	import morn.core.components.IResizebale;
 	import morn.core.handlers.Handler;
 	
 	import uis.user.createRoleUI;
 	
-	public class CreateRoleView extends createRoleUI implements IResizebale
+	public class RoleCreateView extends createRoleUI implements IResizebale
 	{
 		private var model:RoleModel;
-		public function CreateRoleView()
+		public function RoleCreateView()
 		{
 			model = RoleModel.instance;
 			super();
@@ -38,7 +35,8 @@ package games.createRole
 		private function createRequest():void
 		{
 			var dt:DtRole = model.roleCfgList[rgProf.selectedIndex];
-			Lib.net.sendRequest(new CreateRoleRequest(txtName.text,int(dt.id)));
+			model.request(txtName.text,int(dt.id));
+			
 		}		
 		
 		public function onStageResize():void

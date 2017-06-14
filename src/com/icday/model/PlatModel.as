@@ -21,7 +21,7 @@ package com.icday.model
 			if(ExternalInterface.available){
 				
 			}else{
-				Global.userId = "zys001";
+				Global.appKey = "zys001";
 			}
 		}
 	}

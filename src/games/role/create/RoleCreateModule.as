@@ -1,4 +1,4 @@
-package games.createRole
+package games.role.create
 {
 	import com.icday.database.net.consts.ProtocolConst;
 	import com.icday.mvcs.Context;
@@ -11,29 +11,30 @@ package games.createRole
 	
 	import games.globals.ContextEvent;
 	
-	public class CreateRoleModule extends ModuleBase implements IModule
+	public class RoleCreateModule extends ModuleBase implements IModule
 	{
-		public function CreateRoleModule()
+		public function RoleCreateModule()
 		{
 		}
 		
 		override public function startup():void
 		{
-			AsyncViewProxy.regist(CreateRoleView,"assets/skins/comp.swf");
-//			addClosure(ProtocolConst.CreateRole,onRoleCreate);
+			AsyncViewProxy.regist(RoleCreateView,"assets/skins/comp.swf");
+			addClosure(ProtocolConst.RoleCreateResponse,onRoleCreate);
 			Context.instance.addEventListener(ContextEvent.CREATE_ROLE,onRoleCreateHandler);
 		}
 		
 		private function onRoleCreate(cmd:int,status:int,bytes:ByteArray):void
 		{
+			trace(status);
 			if(status == 200){
-				AsyncViewProxy.toggleView(CreateRoleView,App.uiLayer,-1);
+				AsyncViewProxy.toggleView(RoleCreateView,App.uiLayer,-1);
 			}
 		}
 		
 		protected function onRoleCreateHandler(event:DataEvent):void
 		{
-			AsyncViewProxy.toggleView(CreateRoleView,App.uiLayer);
+			AsyncViewProxy.toggleView(RoleCreateView,App.uiLayer,1);
 		}
 	}
 }

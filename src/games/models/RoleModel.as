@@ -1,9 +1,12 @@
 package games.models
 {
 	import com.icday.database.net.data.RoleData;
+	import com.icday.database.net.request.RoleCreateRequest;
 	import com.icday.mvcs.ModelBase;
 	import com.icday.registers.CsvUtil;
 	import com.icday.utils.Singleton;
+	
+	import lib.Lib;
 	
 	public class RoleModel extends ModelBase
 	{
@@ -27,6 +30,15 @@ package games.models
 		public function setData(role:RoleData):void
 		{
 			roleData = role;
+		}
+		
+		public function request(name:String, profId:int):void
+		{
+			if(name == null || name.length < 6){
+				trace("name to short");
+				return;
+			}
+			Lib.net.sendRequest(new RoleCreateRequest(name,profId));
 		}
 	}
 }
