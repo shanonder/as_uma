@@ -39,7 +39,7 @@ package games.auth.model
 		
 		private function onLoginConnect(host:String,port:int):void
 		{
-			Lib.net.sendRequest(new LoginRequest(Global.platId,Global.appKey,Global.token));
+			Lib.net.sendRequest(new LoginRequest(Global.platId,Global.serverid , Global.appKey, Global.token));
 		}
 		 
 	}

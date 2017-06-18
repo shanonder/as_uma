@@ -10,9 +10,13 @@ package com.icday.database.net.response {
 		 */
 		public var platId:int;
 		/**
-		 * 玩家appId
+		 * 服务器ID
 		 */
-		public var appkey:String;
+		public var serverId:int;
+		/**
+		 * 玩家第三方ID
+		 */
+		public var openId:String;
 		/**
 		 * 通行证
 		 */
@@ -23,7 +27,8 @@ package com.icday.database.net.response {
 		public var uid:String;
 		public function LoginResponse(bytes:ByteArray){
 			platId = bytes.readShort();
-			appkey = bytes.readUTF();
+			serverId = bytes.readInt();
+			openId = bytes.readUTF();
 			token = bytes.readUTF();
 			uid = bytes.readUTF();
 		}

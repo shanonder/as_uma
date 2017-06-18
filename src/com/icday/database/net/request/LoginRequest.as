@@ -6,10 +6,11 @@ package com.icday.database.net.request {
 	import com.icday.net.socket.SocketRequestBase;
 	import com.icday.net.interfaces.INetRequest;
 	public class LoginRequest extends SocketRequestBase implements INetRequest{
-		public function LoginRequest(platId:int , appkey:String , token:String){
+		public function LoginRequest(platId:int , serverId:int , openId:String , token:String){
 			super(0x10001);
 			bytes.writeShort(platId);
-			bytes.writeUTF(appkey == null ?"" : appkey);
+			bytes.writeInt(serverId);
+			bytes.writeUTF(openId == null ?"" : openId);
 			bytes.writeUTF(token == null ?"" : token);
 		}
 	}

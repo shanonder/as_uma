@@ -4,6 +4,7 @@ package games.models
 	import com.icday.database.net.request.RoleCreateRequest;
 	import com.icday.mvcs.ModelBase;
 	import com.icday.registers.CsvUtil;
+	import com.icday.util.StringUtil;
 	import com.icday.utils.Singleton;
 	
 	import lib.Lib;
@@ -34,7 +35,7 @@ package games.models
 		
 		public function request(name:String, profId:int):void
 		{
-			if(name == null || name.length < 6){
+			if(name == null || StringUtil.GetStringLength(name)< 6){
 				trace("name to short");
 				return;
 			}
