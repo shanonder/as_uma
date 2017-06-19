@@ -26,7 +26,6 @@ package games.role.create
 		
 		private function onRoleCreate(cmd:int,status:int,bytes:ByteArray):void
 		{
-			trace(status);
 			if(status == 200){
 				AsyncViewProxy.toggleView(RoleCreateView,App.uiLayer,-1);
 			}

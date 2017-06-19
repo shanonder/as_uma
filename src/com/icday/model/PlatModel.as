@@ -21,7 +21,7 @@ package com.icday.model
 			if(ExternalInterface.available){
 				
 			}else{
-				Global.appKey = "zys001";
+				Global.openId = "zys007";
 			}
 		}
 	}

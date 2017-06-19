@@ -11,7 +11,7 @@ package games.globals
 		public static var token:String = "";
 		public static var platId:int = 0;
 		public static var serverid:int = 1;
-		public static var appKey:String = "";
+		public static var openId:String = "";
 		public function Global()
 		{
 		}
