@@ -1,6 +1,7 @@
 package games.role.create
 {
 	import com.icday.database.csvs.DtRole;
+	import com.icday.database.csvs.RoleCfg;
 	
 	import games.models.RoleModel;
 	
@@ -25,7 +26,7 @@ package games.role.create
 			btnCreate.clickHandler = new Handler(createRequest)
 			onStageResize();
 			var dataArr:Array = [];
-			for each (var ele:DtRole in model.roleCfgList){
+			for each (var ele:RoleCfg in model.roleCfgList){
 				dataArr.push("profession_" + ele.profession);
 			}
 			rgProf.dataSource = dataArr;
@@ -34,7 +35,7 @@ package games.role.create
 		
 		private function createRequest():void
 		{
-			var dt:DtRole = model.roleCfgList[rgProf.selectedIndex];
+			var dt:RoleCfg = model.roleCfgList[rgProf.selectedIndex];
 			model.request(txtName.text,int(dt.id));
 			
 		}		

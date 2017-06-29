@@ -5,6 +5,10 @@ package com.icday.registers
 	import com.icday.database.csvs.DtLayout;
 	import com.icday.database.csvs.DtRole;
 	import com.icday.database.csvs.DtScene;
+	import com.icday.database.csvs.ItemCfg;
+	import com.icday.database.csvs.LayoutCfg;
+	import com.icday.database.csvs.RoleCfg;
+	import com.icday.database.csvs.SceneCfg;
 	
 	import games.globals.Global;
 	
@@ -23,10 +27,10 @@ package com.icday.registers
 			ResLoader.registParser(CsvParser.CSV_Data,CsvParser.ParserData);
 			ResLoader.registParser(CsvParser.CSV_PROPS,CsvParser.ParserProps);
 			
-			registClass("scene.dat",CsvParser.CSV_Data,DtScene);
-			registClass("item.dat",CsvParser.CSV_Data,DtItem);
-			registClass("role.dat",CsvParser.CSV_Data,DtRole);
-			registClass("layout.dat",CsvParser.CSV_Data,DtLayout);
+			registClass("scene.dat",CsvParser.CSV_Data,SceneCfg);
+			registClass("item.dat",CsvParser.CSV_Data,ItemCfg);
+			registClass("role.dat",CsvParser.CSV_Data,RoleCfg);
+			registClass("layout.dat",CsvParser.CSV_Data,LayoutCfg);
 			
 			registClass("lang.dat",CsvParser.CSV_PROPS);
 			registClass("config.dat",CsvParser.CSV_PROPS);
@@ -39,7 +43,6 @@ package com.icday.registers
 			if(asClazz){
 				CsvParser.registClass(url,asClazz);
 			}
-			
 		}
 		
 		public static function getObject(name:String):Object{
