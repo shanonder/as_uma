@@ -1,6 +1,5 @@
 package games.role.create
 {
-	import com.icday.database.csvs.DtRole;
 	import com.icday.database.csvs.RoleCfg;
 	
 	import games.models.RoleModel;

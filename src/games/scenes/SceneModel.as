@@ -1,6 +1,5 @@
 package games.scenes
 {
-	import com.icday.database.csvs.DtScene;
 	import com.icday.database.csvs.SceneCfg;
 	import com.icday.database.net.response.EnterWorldResponse;
 	import com.icday.mvcs.ModelBase;

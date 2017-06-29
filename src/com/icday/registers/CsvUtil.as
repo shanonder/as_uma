@@ -1,10 +1,6 @@
 package com.icday.registers
 {
 	import com.icday.CsvParser;
-	import com.icday.database.csvs.DtItem;
-	import com.icday.database.csvs.DtLayout;
-	import com.icday.database.csvs.DtRole;
-	import com.icday.database.csvs.DtScene;
 	import com.icday.database.csvs.ItemCfg;
 	import com.icday.database.csvs.LayoutCfg;
 	import com.icday.database.csvs.RoleCfg;
